@@ -1,0 +1,22 @@
+<main class="content container">
+  <div class="card">
+    <h1>Accounting — Double Entry & Financial Statements</h1>
+    <p>Every transaction affects at least two accounts — debit and credit. We prepare trial balances and then financial statements.</p>
+
+    <h3>Practice</h3>
+    <ol>
+      <li>Record: Owner invests cash &#8358; 100,000 into business.</li>
+      <li>Prepare trial balance for 5 transactions.</li>
+    </ol>
+
+    <p>Download template: <a class="btn-outline" href="trial balance.pdf">Trial balance template (placeholder)</a></p>
+  </div>
+</main>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>

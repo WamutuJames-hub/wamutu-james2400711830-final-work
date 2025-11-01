@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Feedback — EDU.CONNECT</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="container">
+  <header class="header"><div class="top"><div class="brand"><div class="logo">ED</div><div><div style="font-size:14px;color:rgba(255,255,255,0.9)">Online Learning</div><div style="font-size:18px">EDU.CONNECT</div></div></div>
+  <nav class="nav"><a href="index.html">Home</a><a href="notes.html">Notes</a><a href="quiz.html">Quiz</a><a href="timetable.html">Timetable</a><a href="feedback.html">Feedback</a><a href="about.html">About</a></nav></div></header>
+
+  <main class="content container">
+    <div class="card">
+      <h1>Feedback Corner</h1>
+    </p>Users are provided with space to provide feedback on how far they have progressed and also enable the management to make changes and improvements .Endover to keep us updated so that we can also give the best So enter your message bellow and send it yhank you..</p>
+      <form onsubmit="return false;" style="display:flex;flex-direction:column;gap:10px;max-width:600px">
+        <input type="text" id="name" placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid #e6eefc">
+        <input type="email" id="email" placeholder="Your email" style="padding:10px;border-radius:8px;border:1px solid #e6eefc">
+        <textarea id="message" rows="5" placeholder="Your message" style="padding:10px;border-radius:8px;border:1px solid #e6eefc"></textarea>
+        <button class="btn-primary" onclick="send()">Send Feedback-here</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer container">© 2025 All rights reserved .EDU connect</footer>
+</div>
+
+<script>
+function send(){
+  const name=document.getElementById('name').value||'Anonymous';
+  alert('Thanks ' + name + '! (demo) Your feedback was received.');
+  document.getElementById('name').value='';document.getElementById('email').value='';document.getElementById('message').value='';
+}
+</script>
+</body>
+</html>

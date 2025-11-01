@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Timetable — EDU.CONNECT</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="container">
+  <header class="header"><div class="top"><div class="brand"><div class="logo">ED</div><div><div style="font-size:14px;color:rgba(255,255,255,0.9)">Online Learning</div><div style="font-size:18px">EDU.CONNECT</div></div></div>
+  <nav class="nav"><a href="index.html">Home</a><a href="notes.html">Notes</a><a href="quiz.html">Quiz</a><a href="timetable.html">Timetable</a><a href="feedback.html">Feedback</a><a href="about.html">About</a></nav></div></header>
+
+  <main class="content container">
+    <div class="card">
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Timetable</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>📘 Study Timetable</h1>
+  <p>Create your schedule — entries appear below and remain while the page is open.</p>
+
+  <form id="ttForm">
+    <select id="day">
+      <option>Monday</option>
+      <option>Tuesday</option>
+      <option>Wednesday</option>
+      <option>Thursday</option>
+      <option>Friday</option>
+      <option>Saturday</option>
+      <option>Sunday</option>
+    </select>
+    <input id="subject" placeholder="Subject e.g. Math">
+    <input id="time" type="time">
+    <button type="button" onclick="addEntry()">Add</button>
+  </form>
+
+  <div class="table-container">
+    <table id="ttTable">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Subject</th>
+          <th>Time</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    function addEntry() {
+      const day = document.getElementById('day').value;
+      const subject = document.getElementById('subject').value;
+      const time = document.getElementById('time').value;
+
+      if (!subject || !time) return alert('Please fill all fields!');
+
+      const table = document.getElementById('ttTable').querySelector('tbody');
+      const row = document.createElement('tr');
+
+      row.innerHTML = `
+        <td>${day}</td>
+        <td>${subject}</td>
+        <td>${time}</td>
+        <td><button class="delete-btn" onclick="this.closest('tr').remove()">❌</button></td>
+      `;
+      table.appendChild(row);
+
+      document.getElementById('subject').value = '';
+      document.getElementById('time').value = '';
+    }
+  </script>
+
+</body>
+</html>
+
+    </div>
+  </main>
+
+  <footer class="footer container">© 2025 All rights reserved .EDU connect</footer>
+</div>
+
+<script>
+function addEntry{
+  const day = document.getElementById('day').value;
+  const subject = document.getElementById('subject').value || 'Study';
+  const time = document.getElementById('time').value || '--:--';
+  const tbody = document.querySelector('#ttTable tbody');
+  const tr = document.createElement('tr');
+  tr.innerHTML = '<td>'+day+'</td><td>'+subject+'</td><td>'+time+'</td><td><button onclick="this.closest(\\'tr\\').remove()" class="btn-outline">Delete</button></td>';
+  tbody.appendChild(tr);
+  document.getElementById('subject').value=''; document.getElementById('time').value='';
+}
+</script>
+</body>
+</html>

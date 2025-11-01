@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Quiz — EDU.CONNECT</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="top">
+      <div class="brand"><div class="logo">ED</div><div><div style="font-size:14px;color:rgba(255,255,255,0.9)">Online Learning</div><div style="font-size:18px">EDU.CONNECT</div></div></div>
+      <nav class="nav"><a href="index.html">Home</a><a href="notes.html">Notes</a><a href="quiz.html">Quiz</a><a href="timetable.html">Timetable</a><a href="feedback.html">Feedback</a><a href="about.html">About</a></nav>
+    </div>
+  </header>
+
+  <main class="content container">
+    <div class="card">
+      <h1>Quick Quizzes</h1>
+      <p>Two short quizzes to test your basics. Choose an answer and submit — score appears below.</p>
+
+      <h3>Quiz 1 — Web Basics</h3>
+      <form id="quiz1" onsubmit="return false;">
+        <div class="q">
+          <p><strong>1.</strong> What does HTML stand for?</p>
+          <label><input type="radio" name="q1" value="a"> HyperText Markup Language</label><br>
+          <label><input type="radio" name="q1" value="b"> High Transfer Machine Language</label>
+        </div>
+        <div class="q">
+          <p><strong>2.</strong> Which tag links an external CSS file?</p>
+          <label><input type="radio" name="q2" value="a"> &lt;link&gt;</label><br>
+          <label><input type="radio" name="q2" value="b"> &lt;script&gt;</label>
+        </div>
+        <button class="btn-primary" onclick="gradeQuiz1()">Submit Quiz 1</button>
+        <div id="r1" style="margin-top:10px"></div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Quiz 2 — Accounting Basics</h3>
+      <form id="quiz2" onsubmit="return false;">
+        <div class="q">
+          <p><strong>1.</strong> In double-entry bookkeeping, each transaction affects how many accounts?</p>
+          <label><input type="radio" name="a1" value="a"> One</label><br>
+          <label><input type="radio" name="a1" value="b"> Two</label>
+        </div>
+        <div class="q">
+          <p><strong>2.</strong> The trial balance lists balances from the ledger and should balance (True/False).</p>
+          <label><input type="radio" name="a2" value="a"> True</label><br>
+          <label><input type="radio" name="a2" value="b"> False</label>
+        </div>
+        <button class="btn-primary" onclick="gradeQuiz2()">Submit Quiz 2</button>
+        <div id="r2" style="margin-top:10px"></div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer container">© 2025 All rights reserved .EDU connect</footer>
+</div>
+
+<script>
+function gradeQuiz1(){
+  const answers = {q1:'a', q2:'a'};
+  let score=0,total=2;
+  for(let k in answers){
+    const els=document.getElementsByName(k);
+    for(const el of els){ if(el.checked && el.value===answers[k]) score++; }
+  }
+  document.getElementById('r1').innerHTML = '<strong>Score:</strong> '+score+' / '+total;
+}
+function gradeQuiz2(){
+  const answers={a1:'b', a2:'a'};
+  let score=0,total=2;
+  for(let k in answers){
+    const els=document.getElementsByName(k);
+    for(const el of els){ if(el.checked && el.value===answers[k]) score++; }
+  }
+  document.getElementById('r2').innerHTML = '<strong>Score:</strong> '+score+' / '+total;
+}
+</script>
+</body>
+</html>
